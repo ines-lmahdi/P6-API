@@ -9,7 +9,8 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/api/sauces', (req, res, next) => {
+/*app.use('/api/sauces', (req, res, next) => {
+
   const stuff = [
     {
       _id:'sauce 1',
@@ -70,22 +71,8 @@ app.use('/api/sauces', (req, res, next) => {
   ];
   res.status(200).json(stuff);
 });
-
+*/
 module.exports = app;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
@@ -111,7 +98,7 @@ app.use((req, res, next) => {
 });*/
 
 app.use('/images', express.static(path.join(__dirname, 'images')));
-app.use(bodyParser.json());
+app.use(bodyParser.json())
 
 app.use('/api/sauces', stuffRoutes);
 
